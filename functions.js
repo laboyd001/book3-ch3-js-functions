@@ -19,23 +19,26 @@
 
 // Practice: Take a Number - Battle of the Bands----
 
-const bandNumber = 1
+let bandNumber = 0
 
-const takeNumber = function () {
+const takeNumber = function (bandName) {
   /*
       Write your awesome code here. See comments
       below for what should be returned.
   */
 
-  return `${bandNumber}`
-
+ 	bandNumber += 1; 
+	let numberName = `${bandNumber}. ${bandName}`;
+	 return numberName;
 }
 
 const scum = takeNumber("Galactic Scum")
-console.log(scum)  // This should print "1. Galactic Scum" in the console
+console.log(scum)
+  // This should print "1. Galactic Scum" in the console
 
 const under = takeNumber("Underdogs")
-console.log(under)  // This should print "2. Underdogs" in the console
+console.log(under) 
+ // This should print "2. Underdogs" in the console
 
 
 // Practice: Cookout ------------------------------
@@ -70,3 +73,17 @@ const uncookedFood = [hamburger, zucchini, chickenBreast, corn, steak];
 
 // An empty array that will store the objects after the `grill()` function cooks the food.
 const cookedFood = [];
+
+function grill (currentObject) {
+	// Modify the food so that it is cooked
+	currentObject.cooked = true;
+
+	// Put the cooked food into the appropriate array
+	cookedFood.push(currentObject);
+};
+
+for (let i = 0; i < uncookedFood.length; i++) {
+	grill(uncookedFood[i]);
+}
+
+console.log(cookedFood);
